@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <UserSecretsId>"2f9210c9-74e8-4132-86a5-8ccbc9ab1b7a"</UserSecretsId>
 
     <ContainerRepository>innoshop-user-api</ContainerRepository>
     <ContainerImageTags>0.0.1-alpha;latest</ContainerImageTags>
