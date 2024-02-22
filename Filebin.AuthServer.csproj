@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>"2f9210c9-74e8-4132-86a5-8ccbc9ab1b7a"</UserSecretsId>
+
+    <ContainerRepository>innoshop-user-api</ContainerRepository>
+    <ContainerImageTags>0.0.1-alpha;latest</ContainerImageTags>
+
+    <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:8.0</ContainerBaseImage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ContainerPort Include="7000" Type="tcp" />
+    <ContainerEnvironmentVariable Include="ASPNETCORE_URLS" Value="http://0.0.0.0:7000" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Filebin.Common\Util\Filebin.Common.Util.csproj" />
+    <ProjectReference Include="..\Filebin.Common\Commands\Filebin.Common.Commands.csproj" />
+    <ProjectReference Include="..\Filebin.Common\Exceptions\Filebin.Common.Exceptions.csproj" />
+    <ProjectReference Include="..\Filebin.Common\Validation\Filebin.Common.Validation.csproj" />
+    <ProjectReference Include="..\Filebin.Domain\Auth\Abstraction\Filebin.Domain.Auth.Abstraction.csproj" />
+    <ProjectReference Include="..\Filebin.Domain\Auth\Models\Filebin.Domain.Auth.Models.csproj" />
+  </ItemGroup>
+
+</Project>
